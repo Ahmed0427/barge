@@ -330,10 +330,21 @@ func listCommand(args []string) error {
 	return nil
 }
 
+const msg = `
+Barge - a tiny PaaS
+
+Commands:
+  deploy <app-name> [git-url]   Deploy or update an app
+  logs <app-name>               Stream app logs
+  stop <app-name>               Stop a running app
+  start <app-name>              Start a stopped app
+  delete <app-name>             Remove app completely
+  list                          Show all apps
+`
+
 func main() {
 	flag.Usage = func() {
-		msg, _ := os.ReadFile("help_message.txt")
-		fmt.Fprintf(os.Stderr, string(msg))
+		fmt.Fprintf(os.Stderr, msg[1:])
 	}
 	flag.Parse()
 	args := flag.Args()
