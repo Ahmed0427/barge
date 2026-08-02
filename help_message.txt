@@ -1,0 +1,9 @@
+Barge - a tiny PaaS
+
+Commands:
+  deploy <app-name> [git-url]   Deploy or update an app
+  logs <app-name>               Stream app logs
+  stop <app-name>               Stop a running app
+  start <app-name>              Start a stopped app
+  delete <app-name>             Remove app completely
+  list                          Show all apps
